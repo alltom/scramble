@@ -13,6 +13,7 @@ USAGE:
   Just type the letters on the board
   All white-space is ignored.
   "qu" is considered a single letter.
+  If the board isn't 4x4, edit the code (see the bottom).
 
 EXAMPLE:
   $ ruby scramble.rb
