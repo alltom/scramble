@@ -138,14 +138,10 @@ class WordStub
 end
 
 b = Board.new 4, 4
-b.parse "
-  o t s o
-  g r e k
-  n g l s
-  o s e r
-"
-
 d = WordStub.from_dict "/usr/share/dict/web2", (3..8)
+
+b.parse $stdin.read
+
 words = []
 b.each do |cell|
   words = words | cell.find_words(d.next(cell.letter))
