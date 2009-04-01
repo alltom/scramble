@@ -1,5 +1,9 @@
 require "set"
 
+def split_letters string
+  string.downcase.gsub(/[^a-z]/, '').gsub(//, " ").gsub("q u", "qu").split(" ")
+end
+
 class Board
   include Enumerable
   
@@ -13,7 +17,7 @@ class Board
   end
   
   def parse string
-    letters = string.gsub(/[\r\n\t ]/, '').gsub(//, " ").gsub("q u", "qu").split(" ")
+    letters = split_letters(string)
     each do |cell|
       cell.letter = letters.shift
     end
@@ -106,7 +110,7 @@ class WordStub
     File.readlines(filename).each do |word|
       next unless length_range.include? word.chomp.length
       stub = dict
-      word.chomp.gsub(//, " ").gsub("q u", "qu").split(" ").each do |letter|
+      split_letters(word).each do |letter|
         stub = stub.next(letter.downcase)
       end
       stub.next(".") # mark end of word
