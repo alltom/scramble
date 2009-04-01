@@ -1,0 +1,37 @@
+
+Know these these games?
+
+  Boggle:
+    http://en.wikipedia.org/wiki/Boggle
+  Scramble:
+    http://apps.facebook.com/scramblegame/
+
+The goal: to always win, by cheating.
+  I have proven that it works, so please don't trust my ranking.
+
+USAGE:
+  Just type the letters on the board
+  All white-space is ignored.
+  "qu" is considered a single letter.
+
+EXAMPLE:
+  $ ruby scramble.rb
+  aega
+  mquru
+  eepl
+  tcrt
+  ^D
+  ame
+  cee
+  aer
+  eme
+  cep
+  era
+  ere
+  tee
+  tec
+  erg
+  ...
+
+The well-written parts of the code were inspired by Jim Weirich's sudoku solver:
+  http://github.com/jimweirich/sudoku/tree/master
